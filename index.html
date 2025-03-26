@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone, Paper, Scissors Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="scoreCard">
+            <div class="heading">
+                <p>ROCK</p>
+                <p>PAPER</p>
+                <p>SCISSORS</p>
+            </div>
+            <div class="scores">
+                <div class="computer-score score">
+                    <p class="cs-score-heading">COMPUTER SCORE</p>
+                    <p class="cs-score-value"></p>
+                </div>
+                <div class="your-score score">
+                    <p class="your-score-heading">YOUR SCORE</p>
+                    <p class="your-score-value"></p>
+                </div>
+            </div>
+        </div>
+        <div class="selectInput">
+            <div class="input-diagram">
+                <div class="line horizontal"></div>
+                <div class="line left-tilt"></div>
+                <div class="line right-tilt"></div>
+                <div class="circle top-left">
+                    <button class="rock" type="button">✊🏿</button>
+                </div>
+                <div class="circle top-right">
+                    <button class="scissor" type="button">✌🏿️</button>
+                </div>
+                <div class="circle bottom-middle">
+                    <button class="paper" type="button">🤚🏿</button>
+                </div>
+            </div>
+            <div class="result">
+                <div class="picked">
+                    <div class="heading">
+                        <p>YOU PICKED</p>
+                    </div>
+                    <div class="circle top-left">
+                        <button class="our-result" type="button"></button>
+                    </div>
+                </div>
+                <div class="conclusion">
+                    <p></p>
+                    <p>AGAINST PC</p>
+                    <div class="play-agian-button">
+                        <button class="play-again" type="button">PLAY AGAIN</button>
+                    </div>
+                </div>
+                <div class="picked">
+                    <div class="heading">
+                        <p>PC PICKED</p>
+                    </div>
+                    <div class="circle top-left">
+                        <button class="pc-result"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="celebration">
+            <div class="animation">
+                <img src="trophy.png" alt="">
+                <div class="star-container">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+            </div>
+            <div class="slogan">
+                <h2>HURRAY!!</h2>
+                <p>YOU WON THE GAME</p>
+            </div>
+            <div class="play-agian-button">
+                <button class="play-again">PLAY AGAIN</button>
+            </div>
+        </div>
+    </div>
+    <div class="rules">
+        <div class="cross">X</div>
+        <div class="game-rules">
+            <div class="heading">
+                <p>Game Rules</p>
+            </div>
+            <ul class="points">
+                <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper,
+                    scissors.”</li>
+                <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                <li>If both players lay down the same hand, each player lays down another hand</li>
+            </ul>
+        </div>
+        <button class="ruleButton">Rules</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

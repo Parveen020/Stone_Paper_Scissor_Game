@@ -1,0 +1,654 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(140, 196, 97);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.container {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+}
+
+.scoreCard {
+    width: 100%;
+    height: 140px;
+    border: 4px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 15px;
+    /* display: none; */
+}
+
+.scoreCard .heading {
+    width: fit-content;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    margin-left: 10px;
+}
+
+.scoreCard .heading p {
+    font-size: 30px;
+    color: white;
+    font-weight: 540;
+    letter-spacing: 4px;
+}
+
+.scoreCard .scores {
+    width: 40%;
+    height: 85%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.scoreCard .scores .score {
+    width: 40%;
+    height: 100%;
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scoreCard .scores .score .cs-score-heading,
+.scoreCard .scores .score .your-score-heading {
+    text-align: center;
+    margin-top: 5px;
+    color: black;
+    letter-spacing: 1px;
+}
+
+.scoreCard .scores .score .your-score-heading {
+    width: 100px;
+}
+
+.scoreCard .scores .score .cs-score-value,
+.scoreCard .scores .score .your-score-value {
+    text-align: center;
+    font-size: 55px;
+    font-weight: 550;
+    margin-bottom: 10px;
+}
+
+.selectInput {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectInput .input-diagram {
+    position: relative;
+    width: 50%;
+    height: 90%;
+}
+
+.input-diagram .line {
+    position: relative;
+    height: 10px;
+    background-color: rgb(84, 82, 82);
+    border: 1px solid rgb(78, 77, 77);
+}
+
+.input-diagram .horizontal {
+    width: 50%;
+    top: 70px;
+    left: 25%;
+}
+
+.input-diagram .left-tilt,
+.input-diagram .right-tilt {
+    width: 40%;
+    top: 165px;
+    left: 50px;
+    transform: rotate(50deg);
+}
+
+.input-diagram .right-tilt {
+    width: 40%;
+    top: 160px;
+    left: 180px;
+    transform: rotate(130deg);
+}
+
+.input-diagram .circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid black;
+}
+
+.input-diagram .top-left {
+    top: 10px;
+    left: 20px;
+    border-color: blue;
+}
+
+.input-diagram .top-right {
+    top: -87px;
+    left: 270px;
+    border-color: purple;
+}
+
+.input-diagram .bottom-middle {
+    top: -30px;
+    left: 140px;
+    border-color: orange;
+}
+
+.input-diagram .circle button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: none;
+    font-size: 60px;
+}
+
+
+
+.celebration {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    display: none;
+}
+
+.celebration .slogan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: -40px;
+    z-index: 2;
+}
+
+.celebration .animation {
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.celebration .slogan h2 {
+    font-size: 70px;
+    letter-spacing: 4px;
+    color: white;
+}
+
+.celebration .slogan p {
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: white;
+}
+
+.celebration .play-agian-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    z-index: 2;
+}
+
+.celebration .play-agian-button button {
+    width: 170px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding-top: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* New star animation CSS */
+.star-container {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: float 10s linear infinite;
+}
+
+.star:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    width: 30px;
+    height: 30px;
+    left: 25%;
+    animation-delay: 0.4s;
+}
+
+.star:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    left: 40%;
+    animation-delay: 0.8s;
+}
+
+.star:nth-child(4) {
+    width: 20px;
+    height: 20px;
+    left: 60%;
+    animation-delay: 1.2s;
+}
+
+.star:nth-child(5) {
+    width: 35px;
+    height: 35px;
+    left: 75%;
+    animation-delay: 1.6s;
+}
+
+.star:nth-child(6) {
+    width: 25px;
+    height: 25px;
+    left: 85%;
+    animation-delay: 2s;
+}
+
+.star:nth-child(7) {
+    width: 15px;
+    height: 15px;
+    left: 15%;
+    animation-delay: 2.4s;
+}
+
+.star:nth-child(8) {
+    width: 45px;
+    height: 45px;
+    left: 50%;
+    animation-delay: 2.8s;
+}
+
+.star:nth-child(9) {
+    width: 20px;
+    height: 20px;
+    left: 5%;
+    animation-delay: 3.2s;
+}
+
+.star:nth-child(10) {
+    width: 30px;
+    height: 30px;
+    left: 32%;
+    animation-delay: 3.6s;
+}
+
+.star:nth-child(11) {
+    width: 25px;
+    height: 25px;
+    left: 48%;
+    animation-delay: 4s;
+}
+
+.star:nth-child(12) {
+    width: 15px;
+    height: 15px;
+    left: 63%;
+    animation-delay: 4.4s;
+}
+
+.star:nth-child(13) {
+    width: 35px;
+    height: 35px;
+    left: 80%;
+    animation-delay: 4.8s;
+}
+
+.star:nth-child(14) {
+    width: 18px;
+    height: 18px;
+    left: 92%;
+    animation-delay: 5.2s;
+}
+
+.star:nth-child(15) {
+    width: 28px;
+    height: 28px;
+    left: 20%;
+    animation-delay: 5.6s;
+}
+
+.star:nth-child(16) {
+    width: 38px;
+    height: 38px;
+    left: 38%;
+    animation-delay: 6s;
+}
+
+.star:nth-child(17) {
+    width: 22px;
+    height: 22px;
+    left: 55%;
+    animation-delay: 6.4s;
+}
+
+.star:nth-child(18) {
+    width: 32px;
+    height: 32px;
+    left: 70%;
+    animation-delay: 6.8s;
+}
+
+.star:nth-child(19) {
+    width: 23px;
+    height: 23px;
+    left: 88%;
+    animation-delay: 7.2s;
+}
+
+.star:nth-child(20) {
+    width: 42px;
+    height: 42px;
+    left: 12%;
+    animation-delay: 7.6s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-300px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+.result {
+    width: 85%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    display: none;
+}
+
+.result .picked {
+    width: 30%;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.result .picked p {
+    color: white;
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.result .picked .circle button {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: none;
+    font-size: 80px;
+    border: 10px solid white;
+}
+
+.result .conclusion {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result .conclusion p:nth-child(1) {
+    font-size: 45px;
+    color: white;
+    font-weight: 550;
+    letter-spacing: 3px;
+}
+
+.result .conclusion p:nth-child(2) {
+    font-size: 20px;
+    color: white;
+    font-weight: 550;
+    letter-spacing: 2px;
+}
+
+.result .conclusion .play-agian-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    z-index: 2;
+}
+
+.result .conclusion .play-agian-button button {
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.rules {
+    width: 320px;
+    height: auto;
+    position: absolute;
+    left: 78%;
+    top: 35%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.rules button {
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    position: fixed;
+    top: 89%;
+}
+
+.rules .game-rules {
+    width: 98%;
+    background-color: #004d25;
+    border: 5px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    /* display: none; */
+}
+
+.rules .game-rules .heading {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+    letter-spacing: 2px;
+}
+
+.rules .game-rules ul {
+    width: 90%;
+    padding-left: 0;
+    list-style: none;
+}
+
+.rules .game-rules ul li {
+    position: relative;
+    padding-left: 25px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.rules .game-rules ul li::before {
+    content: "■";
+    color: yellow;
+    font-size: 22px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+/* Close Button Styling */
+.cross {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 40px;
+    cursor: pointer;
+    border: 2px solid white;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clicked {
+    transform: scale(0.9);
+    transition: transform 0.2s ease-in-out;
+}
+
+@keyframes fadeInEffect {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOutEffect {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.fadeIn {
+    animation: fadeInEffect 0.3s ease-in-out forwards;
+}
+
+.fadeOut {
+    animation: fadeOutEffect 0.3s ease-in-out forwards;
+}
+
+@keyframes winning-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(4, 74, 6, 0.8);
+    }
+
+    25% {
+        box-shadow: 0 0 50px 50px rgba(22, 156, 27, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 100px 100px rgba(24, 226, 31, 0.4);
+    }
+
+    75% {
+        box-shadow: 0 0 150px 150px rgba(34, 190, 39, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 0 200px 200px rgba(102, 229, 106, 0);
+    }
+}
+
+.circle.winner {
+    position: relative;
+    animation: winning-pulse 3s ease-out infinite;
+    border-radius: 50%;
+}
